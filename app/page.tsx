@@ -1,7 +1,11 @@
-import Image from "next/image";
+import {currentUser} from "@clerk/nextjs/server";
+import {redirect} from "next/navigation";
+import LandingPage from "@/components/landingPage";
 
-export default function Home() {
-  return (
-    <h1 className={"bg-white text-lg"}>Calendra app</h1>
-  );
+export default async function HomePage() {
+    const user = await currentUser();
+
+    if (!user) return <LandingPage/>;
+
+    return redirect('/events');
 }
