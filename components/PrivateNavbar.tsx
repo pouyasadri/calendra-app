@@ -4,7 +4,7 @@ import Image from "next/image";
 import {PrivateNavLinks} from "@/constants";
 import {cn} from "@/lib/utils";
 import {usePathname} from "next/navigation";
-import {SignedIn, SignInButton, UserButton} from "@clerk/nextjs";
+import {SignedIn, UserButton} from "@clerk/nextjs";
 
 export default function PrivateNavbar() {
     const pathname = usePathname();
